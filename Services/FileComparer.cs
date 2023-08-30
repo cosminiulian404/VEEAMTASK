@@ -4,6 +4,9 @@ namespace VEEAM1
 {
     internal class FileComparer : IFileComparer
     {
+
+
+
         public void Compare(string source, string target)
         {
             DirectoryInfo sourceDirectory = new DirectoryInfo(source);
@@ -22,7 +25,7 @@ namespace VEEAM1
 
                 foreach (var v in queryCopyed)
                 {
-                    Log.Logger.Information($"{DateTime.Now} Copying: {v.FullName} This is Copyinh!!!!!!!!!!!!!!!");
+                    Log.Logger.Information($"{DateTime.Now} Copying: {v.FullName}");
                     //shows which items end up in result list  
 
                 }
@@ -35,7 +38,6 @@ namespace VEEAM1
             var queryCreatedFiles = sourceList.Except(targetList, myFileCompare);
 
 
-            Console.WriteLine($"The following files have been created in {source}:");
             foreach (var v in queryCreatedFiles)
             {
                 Log.Logger.Warning($"{DateTime.Now} Created: {v.FullName}");
@@ -63,9 +65,9 @@ namespace VEEAM1
         {
             public FileCompare() { }
 
-            public bool Equals(FileInfo f1, FileInfo f2)
+            public bool Equals(FileInfo? f1, FileInfo? f2)
             {
-                return (GetHashCode(f1) == GetHashCode(f2));
+                return (f1!.Name == f2!.Name) && (f1.Length == f2.Length);
             }
 
             // Return a hash that reflects the comparison criteria. According to the

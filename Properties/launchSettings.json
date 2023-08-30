@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "VEEAM1": {
+      "commandName": "Project"
+    }
+  }
+}

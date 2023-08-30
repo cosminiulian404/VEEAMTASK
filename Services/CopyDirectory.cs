@@ -1,4 +1,5 @@
-﻿namespace VEEAM1
+﻿
+namespace VEEAM1
 {
     internal class CopyDirectory : ICopyDirectory
     {
