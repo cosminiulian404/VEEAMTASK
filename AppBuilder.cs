@@ -90,11 +90,7 @@ namespace VEEAM1
             _fileComparer.Compare(_sourceDirectory!, _targetDirectory!);
             _copyDirectory.CopyAll(_sourceDirectory!, _targetDirectory!);
 
-           
         }
-
-        
-
 
     }
 }

@@ -22,7 +22,7 @@ namespace VEEAM1
 
                 foreach (var v in queryCopyed)
                 {
-                    Log.Logger.Information($"{DateTime.Now} Copying: {v.FullName} This is Copyinh!!!!!!!!!!!!!!!");
+                    Log.Logger.Information($"{DateTime.Now} Copying: {v.FullName}");
                     //shows which items end up in result list  
 
                 }
